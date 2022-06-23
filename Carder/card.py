@@ -1,4 +1,5 @@
 import enum
+import pygame
 import json
 
 
@@ -23,6 +24,7 @@ class Card(object):
         self.skill2 = skill2
         self.spirit = spirit
         self.spirit_rate = spirit_rate
+        self.image=pygame.image.load(image_path)
     def toJSON(self):
         return json.dumps(self.__dict__(), indent=4, ensure_ascii=False)
 
@@ -47,4 +49,3 @@ class Card(object):
 
     def __str__(self):
         return "CARD: {0}".format(self.name)
-
